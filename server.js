@@ -23,7 +23,7 @@ import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as albumsRouter } from './routes/albums.js'
 
-// create the express app
+// create the express app - called at very bottom of code here
 const app = express()
 
 // view engine setup
