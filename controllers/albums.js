@@ -27,7 +27,7 @@ function myShelf(req, res) {
 }
 
 function show(req, res){
-  console.log('show function test');
+  // console.log('show function test');
   Album.findById(req.params.albumId)
   .then(album => {
     res.render('albums/show', {
@@ -55,8 +55,17 @@ function create(req, res) {
 }
 
 function edit(req, res) {
-  res.render('albums/edit', {
-    title: 'Edit Album'
+  console.log('show edit page test');
+  Album.findById(req.params.albumId)
+  .then(album => {
+    res.render('albums/edit', {
+      album,
+      title: 'Edit Album Details'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
   })
 }
 

@@ -5,7 +5,31 @@
   <h1><%= title %></h1>
   <h2>edit album</h2>
 
+  <form 
+    id="form-temp-name" 
+    action="/albums/<%= album._id %>?_method=PUT" 
+    method="POST"
+  >
+
+    <label for="title-input">Title:</label>
+    <input type="text" name="title" id="title-input" value="<%= album.title %>">
+    <br>
+
+    <label for="artist-input">Artist:</label>
+    <input type="text" name="artist" id="artist-input" value="<%= album.artist %>">
+    <br>
+
+    <label for="year-input">Year of Release:</label>
+    <input type="text" name="releaseYear" id="year-input" value="<%= album.releaseYear %>">
+    <br>
+
+    <label for="label-input">Record Label:</label>
+    <input type="text" name="recordLabel" id="label-input" value="<%= album.recordLabel %>">
+    <br>
+
+    <button type="submit">Update Album Details</button>
   
+  </form>
 
 
 
