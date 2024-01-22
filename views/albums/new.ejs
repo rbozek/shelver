@@ -4,45 +4,21 @@
 <main>
   <h1>Add Album</h1>
 
-  <form id="" action="/albums" method="POST">
+  <form id="form-temp-name" action="/albums" method="POST">
 
     <label for="title-input">Title:</label>
     <input type="text" name="title" id="title-input" value="">
     <br>
-
-
-    <label for="airline-select">Airline:</label>
-      <select name="airline" id="airline-select">
-        <option value="American">American</option>
-        <option value="Southwest">Southwest</option>
-        <option value="United">United</option>
-      </select>
+    <label for="artist-input">Artist:</label>
+    <input type="text" name="artist" id="artist-input" value="">
     <br>
-
-    <label for="airport-select">Airport:</label>
-      <select name="airport" id="airport-select">
-        <option value="AUS">AUS</option>
-        <option value="DFW">DFW</option>
-        <option value="DEN" selected>DEN</option>
-        <option value="LAX">LAX</option>
-        <option value="SAN">SAN</option>
-      </select>
+    <label for="year-input">Year of Release:</label>
+    <input type="text" name="releaseYear" id="year-input" value="">
     <br>
-
-    
-
-    <label for="depart-input">Departs:</label>
-    <input
-      type="datetime-local"
-      id="depart-input"
-      name="departs"
-      value="<%= flightDefaultDate %>"
-      min="2000-01-01T00:00"
-      max="2099-01-01T00:00"
-    />
+    <label for="label-input">Record Label:</label>
+    <input type="text" name="recordLabel" id="label-input" value="">
     <br>
-
-    <button type="submit">Add Flight</button>
+    <button type="submit">Add Album</button>
   </form>
 
 

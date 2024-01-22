@@ -1,4 +1,4 @@
-// IMPORT MODEL UP HERE EVENTUALLY
+import { Album } from "../models/album.js"
 
 function index(req, res) {
   res.render('albums/index', {
@@ -12,6 +12,19 @@ function newAlbum(req, res) {
   })
 }
 
+function create(req, res) {
+  // console.log('create function first test');
+  Album.create(req.body)
+  .then(album => {
+    // console.log('create function 2nd test');
+    res.redirect('/albums')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/albums/error')
+  })
+}
+
 function myShelf(req, res) {
   res.render('albums/my-shelf', {
     title: 'My Shelf'
@@ -21,5 +34,6 @@ function myShelf(req, res) {
 export {
   index,
   newAlbum as new,
+  create,
   myShelf
 }
