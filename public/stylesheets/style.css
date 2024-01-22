@@ -48,6 +48,15 @@ nav > a.active {
   color: rgb(217, 3, 3);
 }
 
+main {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+  /* to keep footer at bottom of page (along with part of 'body' styling) */
+  flex: 1;
+}
+
 footer {
   background-color: #f6f6f6;
   color: #1a1a1a;
@@ -58,16 +67,7 @@ footer {
   min-height: 60px;
 }
 
-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-  /* to keep footer at bottom of page (along with part of 'body' styling) */
-  flex: 1;
-}
-
+/* for google oauth divs */
 .right {
   margin-left: auto;
 }

@@ -3,12 +3,15 @@ import * as albumsCtrl from '../controllers/albums.js'
 
 const router = Router()
 
-// GET http://localhost:3000/flights
+// display main public shelf - GET http://localhost:3000/albums
 router.get('/', albumsCtrl.index)
 // replaces: 
 // router.get('/', function (req, res) {
 //   res.render('albums/index', { title: 'Shelver - public shelf' })
 // })
+
+// display new album page - GET http://localhost:3000/albums/new
+router.get('/new', albumsCtrl.new)
 
 export {
   router

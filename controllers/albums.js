@@ -6,6 +6,13 @@ function index(req, res) {
   })
 }
 
+function newAlbum(req, res) {
+  res.render('albums/new', {
+    title: 'Add Album'
+  })
+}
+
 export {
-  index
+  index,
+  newAlbum as new
 }
