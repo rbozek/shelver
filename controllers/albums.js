@@ -69,11 +69,28 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  console.log("testing update album!")
+  // below lines maybe not necessary - for removing empty properties
+  // for (let key in req.body) {
+  //   if(req.body[key] === "") delete req.body[key]
+  // }
+  Album.findByIdAndUpdate(req.params.albumId, req.body, {new: true})
+  .then(album => {
+    res.redirect(`/albums/${album._id}`)
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
+}
+
 export {
   index,
   newAlbum as new,
   myShelf,
   show,
   create,
-  edit
+  edit,
+  update
 }
