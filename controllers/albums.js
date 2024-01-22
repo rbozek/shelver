@@ -10,7 +10,7 @@ function index(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/albums/error')
+    res.redirect('/')
   })
 }
 
@@ -25,7 +25,7 @@ function show(req, res){
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/albums/error')
+    res.redirect('/')
   })
 }
 
@@ -44,7 +44,7 @@ function create(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/albums/error')
+    res.redirect('/')
   })
 }
 
