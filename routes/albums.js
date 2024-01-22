@@ -6,6 +6,11 @@ const router = Router()
 // display main public shelf - GET http://localhost:3000/albums
 router.get('/', albumsCtrl.index)
 
+// display error page? - GET http://localhost:3000/albums/error
+router.get('/error', function(req, res) {
+  res.render('albums/error', { title: 'Error page' })
+})
+
 // display new album page - GET http://localhost:3000/albums/new
 router.get('/new', albumsCtrl.new)
 // create new album - POST http://localhost:3000/albums/
