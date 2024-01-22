@@ -14,7 +14,7 @@ router.get('/', albumsCtrl.index)
 router.get('/new', albumsCtrl.new)
 
 // display my collection page - GET http://localhost:3000/albums/collection
-router.get('/collection', albumsCtrl.collection)
+router.get('/my-shelf', albumsCtrl.myShelf)
 
 
 export {

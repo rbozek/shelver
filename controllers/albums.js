@@ -12,8 +12,8 @@ function newAlbum(req, res) {
   })
 }
 
-function collection(req, res) {
-  res.render('albums/collection', {
+function myShelf(req, res) {
+  res.render('albums/my-shelf', {
     title: 'My Shelf'
   })
 }
@@ -21,5 +21,5 @@ function collection(req, res) {
 export {
   index,
   newAlbum as new,
-  collection
+  myShelf
 }
