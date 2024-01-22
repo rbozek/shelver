@@ -4,7 +4,10 @@
 </head>
 <body>
   <nav>
-    <a href="../" title="back to landing page with you!" id="logo-nav-link">
+    <a
+    href="../"
+    title="back to landing page with you!"
+    id="logo-nav-link">
       <img
       id="shelver-logo"
       src="../../assets/shelver-logo-60.png"
@@ -12,20 +15,23 @@
       >
     </a>
     &nbsp;
-    <a 
-    href="/albums/new" class="nav-link" class=<%= title === 'Add Album' ? 'active' : '' %>
+    <a
+    href="/albums/new"
+    class="nav-link <%= title === 'Add Album' ? 'active' : '' %>"
     >
-    Add Album
+      Add Album
     </a>
 
-    <a 
-      href="/albums/my-shelf" class="nav-link"  class=<%= title === 'My Shelf' ? 'active' : '' %>
+    <a
+    href="/albums/my-shelf"
+    class="nav-link <%= title === 'My Shelf' ? 'active' : '' %>"
     >
       My Shelf
     </a>
 
     <a
-    href="/albums" class="nav-link" class=<%= title === 'Public Shelf' ? 'active' : '' %>
+    href="/albums"
+    class="nav-link <%= title === 'Public Shelf' ? 'active' : '' %>"
     >
       Public Shelf
     </a>
