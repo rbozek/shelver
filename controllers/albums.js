@@ -2,7 +2,7 @@
 
 function index(req, res) {
   res.render('albums/index', {
-    title: 'Shelver - public shelf'
+    title: 'Public Shelf'
   })
 }
 

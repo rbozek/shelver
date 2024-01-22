@@ -4,8 +4,27 @@
 </head>
 <body>
   <nav>
+
+    <a 
+    href="/albums/new" class=<%= title === 'Add Album' ? 'active' : '' %>
+    >
+    Add Album
+    </a>
+
+    <a 
+      href="/albums/collection" class=<%= title === 'My Shelf' ? 'active' : '' %>
+    >
+      My Shelf
+    </a>
+
+    <a
+    href="/albums" class=<%= title === 'Public Shelf' ? 'active' : '' %>
+    >
+      Public Shelf
+    </a>
+
     <% if (user) { %>
-      <a href="/auth/logout" class="right">
+      <a href="/auth/logout">
         <button type="submit">Logout</button>
       </a>
     <% } else { %>

@@ -25,13 +25,27 @@ body {
   flex-direction: column;
 }
 
-nav {
+body > nav {
   background-color: #f6f6f6;
   color: #1a1a1a;
   display: flex;
-  align-items: center;
+  justify-content: flex-end;
+  /* to vertically center: */
+  align-items: center;  
+
   padding: 10px;
   min-height: 60px;
+}
+nav > a {
+  text-decoration: none;
+  color: #424748;
+  margin: 10px;
+}
+nav > a:hover {
+  background: rgb(3, 14, 217);
+}
+nav > a.active {
+  color: rgb(217, 3, 3);
 }
 
 footer {
