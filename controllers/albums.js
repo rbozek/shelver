@@ -14,6 +14,18 @@ function index(req, res) {
   })
 }
 
+function newAlbum(req, res) {
+  res.render('albums/new', {
+    title: 'Add Album'
+  })
+}
+
+function myShelf(req, res) {
+  res.render('albums/my-shelf', {
+    title: 'My Shelf'
+  })
+}
+
 function show(req, res){
   console.log('show function test');
   Album.findById(req.params.albumId)
@@ -26,12 +38,6 @@ function show(req, res){
   .catch(err => {
     console.log(err)
     res.redirect('/')
-  })
-}
-
-function newAlbum(req, res) {
-  res.render('albums/new', {
-    title: 'Add Album'
   })
 }
 
@@ -48,16 +54,17 @@ function create(req, res) {
   })
 }
 
-function myShelf(req, res) {
-  res.render('albums/my-shelf', {
-    title: 'My Shelf'
+function edit(req, res) {
+  res.render('albums/edit', {
+    title: 'Edit Album'
   })
 }
 
 export {
   index,
-  show,
   newAlbum as new,
+  myShelf,
+  show,
   create,
-  myShelf
+  edit
 }
