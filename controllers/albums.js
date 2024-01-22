@@ -14,6 +14,21 @@ function index(req, res) {
   })
 }
 
+function show(req, res){
+  console.log('show function test');
+  Album.findById(req.params.albumId)
+  .then(album => {
+    res.render('albums/show', {
+      album,
+      title: 'Album Details'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/albums/error')
+  })
+}
+
 function newAlbum(req, res) {
   res.render('albums/new', {
     title: 'Add Album'
@@ -41,6 +56,7 @@ function myShelf(req, res) {
 
 export {
   index,
+  show,
   newAlbum as new,
   create,
   myShelf

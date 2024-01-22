@@ -11,6 +11,8 @@ router.get('/error', function(req, res) {
   res.render('albums/error', { title: 'Error page' })
 })
 
+// display album detail page - GET http://localhost:3000/albums/show
+router.get('/:albumId', albumsCtrl.show)
 // display new album page - GET http://localhost:3000/albums/new
 router.get('/new', albumsCtrl.new)
 // create new album - POST http://localhost:3000/albums/

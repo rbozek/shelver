@@ -12,6 +12,7 @@
         <th>Artist</th>
         <th>Release Year</th>
         <th>Record Label</th>
+        <th>Details</th>
       </tr>
     </thead>
     <tbody>
@@ -21,6 +22,7 @@
         <td><%= album.artist %></td>
         <td><%= album.releaseYear %></td>
         <td><%= album.recordLabel %></td>
+        <td><a href="/albums/<%= album._id %>">🔎</a></td>
       </tr>
       <% }) %>
     </tbody>
