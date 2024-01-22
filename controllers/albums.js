@@ -1,8 +1,16 @@
 import { Album } from "../models/album.js"
 
 function index(req, res) {
-  res.render('albums/index', {
-    title: 'Public Shelf'
+  Album.find({})
+  .then(albums => {
+    res.render('albums/index', {
+      albums,
+      title: 'Public Shelf'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/albums/error')
   })
 }
 

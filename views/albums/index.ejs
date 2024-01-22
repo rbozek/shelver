@@ -5,8 +5,30 @@
   <h1>Shelver</h1>
   <h2>main library</h2>
 
+  <table id="">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Artist</th>
+        <th>Release Year</th>
+        <th>Record Label</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% albums.forEach((album) => { %>
+      <tr>
+        <td><%= album.title %></td>
+        <td><%= album.artist %></td>
+        <td><%= album.releaseYear %></td>
+        <td><%= album.recordLabel %></td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+
   <div>testing some test</div>
-  <a href="./error">testing error page 2</a>
+  <a href="/albums/error">testing error page 2</a>
 
 </main>
 
