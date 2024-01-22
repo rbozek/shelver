@@ -13,6 +13,10 @@ router.get('/', albumsCtrl.index)
 // display new album page - GET http://localhost:3000/albums/new
 router.get('/new', albumsCtrl.new)
 
+// display my collection page - GET http://localhost:3000/albums/collection
+router.get('/collection', albumsCtrl.collection)
+
+
 export {
   router
 }

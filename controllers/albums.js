@@ -12,7 +12,14 @@ function newAlbum(req, res) {
   })
 }
 
+function collection(req, res) {
+  res.render('albums/collection', {
+    title: 'My Shelf'
+  })
+}
+
 export {
   index,
-  newAlbum as new
+  newAlbum as new,
+  collection
 }
