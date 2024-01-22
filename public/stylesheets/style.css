@@ -55,6 +55,13 @@ main {
   flex-direction: column;
   /* to keep footer at bottom of page (along with part of 'body' styling) */
   flex: 1;
+
+  /* background image stuff */
+  background-image: url('../assets/background-vinylshelf-lq-1600.png');
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.25;
 }
 
 footer {
