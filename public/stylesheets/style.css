@@ -48,6 +48,8 @@ nav > a.active {
   color: rgb(217, 3, 3);
 }
 
+
+
 main {
   display: flex;
   align-items: center;
@@ -55,14 +57,16 @@ main {
   flex-direction: column;
   /* to keep footer at bottom of page (along with part of 'body' styling) */
   flex: 1;
-
   /* background image stuff */
-  background-image: url('../assets/background-vinylshelf-lq-1600.png');
+  /* background-color: #000000; */
+  background-image: url('../assets/background-vinylshelf-lq-1600-dark.png');
   background-position: top left;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-size: cover;
-  opacity: 0.25;
+  /* opacity: 0.25; */
 }
+
+
 
 footer {
   background-color: #f6f6f6;
