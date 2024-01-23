@@ -16,20 +16,25 @@
       >
     </a>
     &nbsp;
+    
+    <!-- display links to logged-in users only -->
+    <% if (user) { %>
     <a
     href="/albums/new"
     class="nav-link <%= title === 'Add Album' ? 'active' : '' %>"
     >
       Add Album
     </a>
-
+    
     <a
     href="/albums/my-shelf"
     class="nav-link <%= title === 'My Shelf' ? 'active' : '' %>"
     >
-      My Shelf
-    </a>
-
+    My Shelf
+  </a>
+  <% } %>
+  <!-- end of 'display to logged-in users only' -->
+  
     <a
     href="/albums"
     class="nav-link <%= title === 'Public Shelf' ? 'active' : '' %>"

@@ -22,8 +22,8 @@ const albumSchema = new Schema({
   },
   releaseYear: {type: Number},
   recordLabel: {type: String},
-  reviews: [reviewSchema],
-  // owner: {type: Schema.Types.ObjectId, ref: 'Profile'}
+  // reviews: [reviewSchema],
+  owner: {type: Schema.Types.ObjectId, ref: 'Profile'}
 },{ 
   timestamps: true
 })

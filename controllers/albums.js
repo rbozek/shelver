@@ -58,8 +58,8 @@ function edit(req, res) {
 
 function create(req, res) {
   // console.log('create function first test');
-  // Cannot read properties of undefined (reading 'profile')
-  req.body.owner = req.user.profile._id   
+  
+  req.body.owner = req.user.profile._id
   Album.create(req.body)
   .then(album => {
     // console.log('create function 2nd test');

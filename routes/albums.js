@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import * as albumsCtrl from '../controllers/albums.js'
+import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
@@ -8,9 +9,9 @@ const router = Router()
 // SHOW MAIN PUBLIC SHELF - GET http://localhost:3000/albums
 router.get('/', albumsCtrl.index)
 // SHOW 'ADD ALBUM' PAGE - GET http://localhost:3000/albums/new
-router.get('/new', albumsCtrl.new)
+router.get('/new', isLoggedIn, albumsCtrl.new)
 // CREATE NEW ALBUM - POST http://localhost:3000/albums/
-router.post('/', albumsCtrl.create)
+router.post('/', isLoggedIn, albumsCtrl.create)
 // SHOW 'MY SHELF' PAGE - GET http://localhost:3000/albums/my-shelf
 router.get('/my-shelf', albumsCtrl.myShelf)
 // SHOW 'ALBUM EDIT' PAGE - GET http://localhost:3000/albums/:albumid/edit

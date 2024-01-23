@@ -64,6 +64,7 @@ main {
   flex: 1;
   /* background image stuff */
   /* background-color: #000000; */
+  
   background-image: url('../assets/background-vinylshelf-lq-1600-dark.png');
   background-position: top left;
   background-repeat: repeat-y;
