@@ -8,19 +8,23 @@ const router = Router()
 
 // SHOW MAIN PUBLIC SHELF - GET http://localhost:3000/albums
 router.get('/', albumsCtrl.index)
-// SHOW 'ADD ALBUM' PAGE - GET http://localhost:3000/albums/new
+// SHOW 'ADD ALBUM' VIEW - GET http://localhost:3000/albums/new
 router.get('/new', isLoggedIn, albumsCtrl.new)
 // CREATE NEW ALBUM - POST http://localhost:3000/albums/
 router.post('/', isLoggedIn, albumsCtrl.create)
-// SHOW 'MY SHELF' PAGE - GET http://localhost:3000/albums/my-shelf
+// SHOW 'MY SHELF' VIEW - GET http://localhost:3000/albums/my-shelf
 router.get('/my-shelf', albumsCtrl.myShelf)
-// SHOW 'ALBUM EDIT' PAGE - GET http://localhost:3000/albums/:albumid/edit
+// SHOW 'ALBUM EDIT' VIEW - GET http://localhost:3000/albums/:albumid/edit
 router.get('/:albumId/edit', isLoggedIn, albumsCtrl.edit)
-// SHOW 'ALBUM DETAIL' PAGE - GET http://localhost:3000/albums/show
+
+// ADD REVIEW FROM 'ALBUM DETAIL' VIEW - GET http://localhost:3000/albums/:albumid/edit
+router.post('/:albumId/reviews', isLoggedIn, albumsCtrl.addComment)
+
+// SHOW 'ALBUM DETAIL' VIEW - GET http://localhost:3000/albums/show
 router.get('/:albumId', albumsCtrl.show)
-// UPDATE ALBUM DETAILS ON EDIT PAGE - GET http://localhost:3000/albums/:albumid
+// UPDATE ALBUM DETAILS ON EDIT VIEW - GET http://localhost:3000/albums/:albumid
 router.put('/:albumId', isLoggedIn, albumsCtrl.update)
-// DELETE ALBUM FROM 'ALBUM EDIT' PAE - DEL http://localhost:3000/albums/:albumId
+// DELETE ALBUM FROM 'ALBUM EDIT' VIEW - DEL http://localhost:3000/albums/:albumId
 router.delete('/:albumId', isLoggedIn, albumsCtrl.delete)
 
 

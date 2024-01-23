@@ -27,7 +27,6 @@
   </form>
   <% } %>
   
-  
   <!-- display for album owner only -->
 <% if (album.owner.equals(user?.profile._id)) { %>
 <form 
@@ -37,6 +36,31 @@
   <button type="submit"><h3>🗑️</h3></button>
 </form>
 <% } %>
+
+<h2>Reviews</h2>
+<% if (user) { %>
+  <h3>Add a review</h3>
+  <form
+  id="form-temp-name" 
+  action="/albums/<%= album._id %>/reviews"
+  method="POST"
+  >
+    <label for="review-input">Review:</label>
+    <textarea name="content" id="review-input" placeholder="Your review goes here"></textarea><br>
+
+    <label for="rating-input">Rating:</label>
+    <select name="rating" id="rating-input">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select><br>
+
+    <button type="submit">Add Review</button>
+  </form>
+<% } %>
+
 
 
 </main>

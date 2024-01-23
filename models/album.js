@@ -22,7 +22,7 @@ const albumSchema = new Schema({
   },
   releaseYear: {type: Number},
   recordLabel: {type: String},
-  // reviews: [reviewSchema],
+  reviews: [reviewSchema],
   owner: {type: Schema.Types.ObjectId, ref: 'Profile'}
 },{ 
   timestamps: true

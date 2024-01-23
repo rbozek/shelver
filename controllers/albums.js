@@ -126,6 +126,31 @@ function deleteAlbum(req, res) {
   })
 }
 
+function addComment(req, res){
+  //find album
+  Album.findById(req.params.albumId)
+  .then(album => {
+    // set author to profile's id
+    req.body.author = req.user.profile._id
+    req.body.rating = req.body.rating
+    // push form data into reviews array
+    album.reviews.push(req.body)
+    // save
+    album.save()
+    .then(()=> {
+      res.redirect(`/albums/${album._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/albums')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
+}
+
 export {
   index,
   newAlbum as new,
@@ -134,5 +159,7 @@ export {
   edit,
   create,
   update,
-  deleteAlbum as delete
+  deleteAlbum as delete,
+
+  addComment
 }
