@@ -88,6 +88,7 @@ function update(req, res) {
   })
 }
 
+// not yet fully protected - only route & UI have been adjusted for album owner only.
 function deleteAlbum(req, res){
   Album.findByIdAndDelete(req.params.albumId)
   .then(album => {

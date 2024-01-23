@@ -21,7 +21,7 @@ router.get('/:albumId', albumsCtrl.show)
 // UPDATE ALBUM DETAILS ON EDIT PAGE - GET http://localhost:3000/albums/:albumid
 router.put('/:albumId', isLoggedIn, albumsCtrl.update)
 // DELETE ALBUM FROM 'ALBUM EDIT' PAE - DEL http://localhost:3000/albums/:albumId
-router.delete('/:albumId', albumsCtrl.delete)
+router.delete('/:albumId', isLoggedIn, albumsCtrl.delete)
 
 
 

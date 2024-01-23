@@ -19,19 +19,24 @@
   
 </section>
 
+<!-- display for logged-in user only -->
 <% if (user) { %>
-<!-- hard to see but there's a pencil emoji in there: -->
-<form action="/albums/<%= album._id %>/edit" method="GET">
-  <button type="submit"><h3>✏️</h3></button>
-</form>
-<% } %>
-
+  <form action="/albums/<%= album._id %>/edit" method="GET">
+    <!-- hard to see but there's a pencil emoji in there: -->
+    <button type="submit"><h3>✏️</h3></button>
+  </form>
+  <% } %>
+  
+  
+  <!-- display for album owner only -->
+<% if (album.owner.equals(user?.profile._id)) { %>
 <form 
   action="/albums/<%= album._id %>?_method=DELETE" 
   method="POST"
 >
   <button type="submit"><h3>🗑️</h3></button>
 </form>
+<% } %>
 
 
 </main>
