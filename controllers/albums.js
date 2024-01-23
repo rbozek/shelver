@@ -29,8 +29,12 @@ function myShelf(req, res) {
 function show(req, res){
   // console.log('show function test');
   Album.findById(req.params.albumId)
-  // to populate full info of album owner's profile
-  .populate("owner")
+  // from Taco Cat "to show comments about tacos"
+  .populate([
+    {path: "owner"},
+    // 'deep population' to access author name in embedded reviewSchema
+    {path: "reviews.author"}
+  ])
   .then(album => {
     res.render('albums/show', {
       album,
@@ -160,6 +164,5 @@ export {
   create,
   update,
   deleteAlbum as delete,
-
   addComment
 }

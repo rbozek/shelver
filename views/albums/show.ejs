@@ -25,9 +25,9 @@
     <!-- hard to see but there's a pencil emoji in there: -->
     <button type="submit"><h3>✏️</h3></button>
   </form>
-  <% } %>
+<% } %>
   
-  <!-- display for album owner only -->
+<!-- display for album owner only -->
 <% if (album.owner.equals(user?.profile._id)) { %>
 <form 
   action="/albums/<%= album._id %>?_method=DELETE" 
@@ -61,7 +61,13 @@
   </form>
 <% } %>
 
-
+<ul>
+  <% album.reviews?.forEach(review => { %>
+    <li>
+      [Rating: <%= review.rating %>/5] - <%= review.content %> - by <%= review.author.name %>
+    </li> 
+  <% }) %>
+</ul>
 
 </main>
 
