@@ -29,6 +29,7 @@ function myShelf(req, res) {
 function show(req, res){
   // console.log('show function test');
   Album.findById(req.params.albumId)
+  .populate("owner")
   .then(album => {
     res.render('albums/show', {
       album,
