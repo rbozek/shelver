@@ -17,10 +17,10 @@
 </section>
 
 <!-- hard to see but there's a pencil emoji in there: -->
-<h3><a href="/albums/<%= album._id %>/edit">✏️</a></h3> 
-<h3><a href="/albums/<%= album._id %>/delete">🗑️</a></h3> 
+<form action="/albums/<%= album._id %>/edit" method="GET">
+  <button type="submit"><h3>✏️</h3></button>
+</form>
 
-THIS ONE:
 <form 
   action="/albums/<%= album._id %>?_method=DELETE" 
   method="POST"
