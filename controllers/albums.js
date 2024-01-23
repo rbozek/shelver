@@ -29,6 +29,7 @@ function myShelf(req, res) {
 function show(req, res){
   // console.log('show function test');
   Album.findById(req.params.albumId)
+  // to populate full info of album owner's profile
   .populate("owner")
   .then(album => {
     res.render('albums/show', {
@@ -74,10 +75,12 @@ function create(req, res) {
 
 function update(req, res) {
   console.log("testing update album!")
-  // below lines maybe not necessary - for removing empty properties
+  // below lines not necessary - for removing empty properties - temp keep for reference.
   // for (let key in req.body) {
   //   if(req.body[key] === "") delete req.body[key]
   // }
+
+
   Album.findByIdAndUpdate(req.params.albumId, req.body, {new: true})
   .then(album => {
     res.redirect(`/albums/${album._id}`)
@@ -88,11 +91,18 @@ function update(req, res) {
   })
 }
 
-// not yet fully protected - only route & UI have been adjusted for album owner only.
-function deleteAlbum(req, res){
-  Album.findByIdAndDelete(req.params.albumId)
+// now fully protected. find album by id, then IF the owner id matches profile id, will go ahead.
+function deleteAlbum(req, res) {
+  Album.findById(req.params.albumId)
   .then(album => {
-    res.redirect("/albums")
+    if (album.owner.equals(req.user.profile._id)) {
+      taco.deleteOne()
+      .then(() => {
+        res.redirect("/albums")
+      })
+    } else {
+      throw new Error ('🚫 Not authorized 🚫')
+    } 
   })
   .catch(err => {
     console.log(err)
