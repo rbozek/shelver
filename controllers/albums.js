@@ -96,7 +96,7 @@ function deleteAlbum(req, res) {
   Album.findById(req.params.albumId)
   .then(album => {
     if (album.owner.equals(req.user.profile._id)) {
-      taco.deleteOne()
+      album.deleteOne()
       .then(() => {
         res.redirect("/albums")
       })
