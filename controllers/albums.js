@@ -41,19 +41,6 @@ function show(req, res){
   })
 }
 
-function create(req, res) {
-  // console.log('create function first test');
-  Album.create(req.body)
-  .then(album => {
-    // console.log('create function 2nd test');
-    res.redirect('/albums')
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect('/')
-  })
-}
-
 function edit(req, res) {
   console.log('show edit page test');
   Album.findById(req.params.albumId)
@@ -62,6 +49,19 @@ function edit(req, res) {
       album,
       title: 'Edit Album Details'
     })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
+function create(req, res) {
+  // console.log('create function first test');
+  Album.create(req.body)
+  .then(album => {
+    // console.log('create function 2nd test');
+    res.redirect('/albums')
   })
   .catch(err => {
     console.log(err)
@@ -85,12 +85,24 @@ function update(req, res) {
   })
 }
 
+function deleteAlbum(req, res){
+  Album.findByIdAndDelete(req.params.albumId)
+  .then(album => {
+    res.redirect("/albums")
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
+}
+
 export {
   index,
   newAlbum as new,
   myShelf,
   show,
-  create,
   edit,
-  update
+  create,
+  update,
+  deleteAlbum as delete
 }
