@@ -15,11 +15,11 @@ router.post('/', isLoggedIn, albumsCtrl.create)
 // SHOW 'MY SHELF' PAGE - GET http://localhost:3000/albums/my-shelf
 router.get('/my-shelf', albumsCtrl.myShelf)
 // SHOW 'ALBUM EDIT' PAGE - GET http://localhost:3000/albums/:albumid/edit
-router.get('/:albumId/edit', albumsCtrl.edit)
+router.get('/:albumId/edit', isLoggedIn, albumsCtrl.edit)
 // SHOW 'ALBUM DETAIL' PAGE - GET http://localhost:3000/albums/show
 router.get('/:albumId', albumsCtrl.show)
 // UPDATE ALBUM DETAILS ON EDIT PAGE - GET http://localhost:3000/albums/:albumid
-router.put('/:albumId', albumsCtrl.update)
+router.put('/:albumId', isLoggedIn, albumsCtrl.update)
 // DELETE ALBUM FROM 'ALBUM EDIT' PAE - DEL http://localhost:3000/albums/:albumId
 router.delete('/:albumId', albumsCtrl.delete)
 

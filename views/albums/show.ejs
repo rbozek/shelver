@@ -19,10 +19,12 @@
   
 </section>
 
+<% if (user) { %>
 <!-- hard to see but there's a pencil emoji in there: -->
 <form action="/albums/<%= album._id %>/edit" method="GET">
   <button type="submit"><h3>✏️</h3></button>
 </form>
+<% } %>
 
 <form 
   action="/albums/<%= album._id %>?_method=DELETE" 
