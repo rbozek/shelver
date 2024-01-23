@@ -80,15 +80,31 @@ function update(req, res) {
   //   if(req.body[key] === "") delete req.body[key]
   // }
 
-
-  Album.findByIdAndUpdate(req.params.albumId, req.body, {new: true})
+  Album.findById(req.params.albumId)
   .then(album => {
-    res.redirect(`/albums/${album._id}`)
+    if (req.user) {
+      album.updateOne(req.body)
+      .then(() => {
+        res.redirect(`/albums/${album._id}`)
+      })
+    } else {
+      throw new Error ('🚫 Not authorized 🚫')
+    } 
   })
   .catch(err => {
     console.log(err)
     res.redirect("/")
   })
+
+  // previous code, not fully secure!
+  // Album.findByIdAndUpdate(req.params.albumId, req.body, {new: true})
+  // .then(album => {
+  //   res.redirect(`/albums/${album._id}`)
+  // })
+  // .catch(err => {
+  //   console.log(err)
+  //   res.redirect("/")
+  // })
 }
 
 // now fully protected. find album by id, then IF the owner id matches profile id, will go ahead.
