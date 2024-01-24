@@ -65,12 +65,13 @@ function edit(req, res) {
 
 function create(req, res) {
   // console.log('create function first test');
-  
   req.body.owner = req.user.profile._id
+  // console.log('1st test ' + req.body._id);
   Album.create(req.body)
   .then(album => {
-    // console.log('create function 2nd test');
-    res.redirect('/albums')
+    // console.log('2nd test ' + album._id);
+    // album.save()
+    res.redirect(`/albums/${album._id}`)
   })
   .catch(err => {
     console.log(err)
