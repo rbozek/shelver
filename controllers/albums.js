@@ -157,11 +157,26 @@ function addComment(req, res){
 }
 
 function addToMyShelf(req, res){
-  // find profile
-  console.log(req.user.profile._id);
-  console.log(req.params.albumId);
-  
+  // console.log(req.user.profile._id);
+  // console.log(req.params.albumId);
 
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    if (req.user) {
+      profile.myShelf.push(req.params.albumId)
+      profile.save()
+      .then(() => {
+        res.redirect(`/albums/${req.params.albumId}`)
+      })
+      
+    } else {
+      throw new Error ('🚫 Not authorized 🚫')
+    } 
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
 }
 
 
