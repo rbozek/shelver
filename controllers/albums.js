@@ -1,4 +1,5 @@
 import { Album } from "../models/album.js"
+import { Profile } from "../models/profile.js"
 
 function index(req, res) {
   Album.find({})
@@ -155,6 +156,13 @@ function addComment(req, res){
   })
 }
 
+function addToMyShelf(req, res){
+  // find profile
+  console.log(req.user.profile._id);
+  console.log(req.params.albumId);
+  
+
+}
 
 
 export {
@@ -166,5 +174,6 @@ export {
   create,
   update,
   deleteAlbum as delete,
-  addComment
+  addComment,
+  addToMyShelf
 }

@@ -5,6 +5,7 @@ const Schema = mongoose.Schema
 const profileSchema = new Schema({
   name: String,
   avatar: String,
+  myShelf: [{ type: Schema.Types.ObjectId, ref: 'Album' }],
 }, {
   timestamps: true
 })

@@ -21,6 +21,11 @@ router.get('/my-shelf', albumsCtrl.myShelf)
 // SHOW 'ALBUM DETAIL' VIEW - GET http://localhost:3000/albums/show
 router.get('/:albumId', albumsCtrl.show)
 
+
+// ADD ALBUM TO MY SHELF/ PROFILE MODEL - POST ??
+// router.post('/:albumId/addToMyShelf', albumsCtrl.addToMyShelf)
+
+
 // SHOW 'ALBUM EDIT' VIEW - GET http://localhost:3000/albums/:albumid/edit
 router.get('/:albumId/edit', isLoggedIn, albumsCtrl.edit)
 
@@ -32,6 +37,7 @@ router.put('/:albumId', isLoggedIn, albumsCtrl.update)
 
 // DELETE ALBUM FROM 'ALBUM EDIT' VIEW - DEL http://localhost:3000/albums/:albumId
 router.delete('/:albumId', isLoggedIn, albumsCtrl.delete)
+
 
 
 
