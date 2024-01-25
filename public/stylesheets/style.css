@@ -59,10 +59,10 @@ body > nav {
 }
 nav > .nav-link {
   text-decoration: none;
-  color: #cccccc;
+  color: #ffffff;
   margin: 0px 5px;
   padding: 5px;
-  border: 2px solid #cccccc;
+  border: 2px solid #ffffff;
   border-radius: 5px;
 }
 nav > .nav-link:hover {
@@ -73,12 +73,12 @@ nav > .nav-link:active {
   color: #b98d47;
 }
 nav > .nav-link.active {
-  background: #cccccc;
+  background: #ffffff;
   color: #000000;
 }
 nav > .nav-link.active:hover {
   background: #b98d47;
-  color: #cccccc;
+  color: #ffffff;
 }
 nav > .nav-link.active:active {
   background: #000000;
@@ -120,9 +120,38 @@ footer {
   /* flex-direction: column; */
   justify-content: center;
   align-items: center;  /* to vertically center: */
-  padding: 5px 10px 5px 10px;
-  min-height: 30px;
+  padding: 5px;
+  min-height: 44px;
+  max-height: 50px;
 }
+footer > .nav-link {
+  text-decoration: none;
+  color: #cccccc;
+}
+footer > .nav-link:hover {
+  color: #b98d47;
+  text-decoration: underline;
+}
+footer > .nav-link:active {
+  color: #000000;
+  text-decoration: underline;
+}
+/* footer > .nav-link.active {
+  background: #cccccc;
+  color: #000000;
+}
+footer > .nav-link.active:hover {
+  background: #b98d47;
+  color: #cccccc;
+}
+footer > .nav-link.active:active {
+  background: #000000;
+  color: #b98d47;
+} */
+
+
+
+
 
 
 
