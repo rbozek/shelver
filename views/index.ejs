@@ -1,13 +1,30 @@
-<%- include('./partials/html-head') %>
-<%- include('./partials/nav') %>
-
-<main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <title><%= title %></title>
+  <% if (!user) { %>
+    <script defer src="https://accounts.google.com/gsi/client"></script>
+  <% } %>
+</head>
+<body id="landing-page">
+<main id="landing-page">
   <h1>Shelver</h1>
+
+  <img
+  id="shelver-logo"
+  src="../../assets/shelver-logo-wh-full.png"
+  width="160px"
+  padding="0px"
+  alt="Logo"
+  >
   <h2>take control of your music library</h2>
 
+  <br>
 
   <% if (user) { %>
-    <p>[if user logged in]</p>
     <h3>hello, <%= user ? user.profile.name : "friend" %></h3>
     <% if (user?.profile.avatar) { %>
       <div>
@@ -21,7 +38,6 @@
       <button type="submit">Continue to public shelf</button>
     </form>
   <% } else { %>
-    <p>[if user not logged in]</p>
     <div 
       id="g_id_onload"
       data-client_id="<%= googleClientID %>"
@@ -45,7 +61,7 @@
   <% } %>
 
 
-
 </main>
 
-<%- include('./partials/footer') %>
+</body>
+</html>

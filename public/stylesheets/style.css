@@ -11,22 +11,43 @@ html {
   box-sizing: inherit;
 }
 
+
 body {
   background-image: url('../assets/background-vinylshelf-dark-1600-lq.png');
   background-position: top left;
   background-repeat: repeat-y;
   background-size: cover;
-  /* opacity: 0.25; */
   color: #f6f6f6;
-  /* Use a system font, if none are available use any found sans-sarif font */
+  /* Use a system font, if none are available use any found sans-serif font */
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
   margin: 0;
-
   /* to keep footer at bottom of page (along with part of 'main' styling) */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+body#landing-page { background-image: url('../assets/background-prevail-lq.png');
+  background-position: bottom left;
+  background-repeat: repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  padding: 50px 0px 50px 0px;
+}
+main#landing-page {
+  background: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  min-width: 300px;
+  height: 200px;
+  border-radius: 20px;
+  margin: auto;
+  padding: 50px;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* flex-direction: column; */
 }
 
 body > nav {
