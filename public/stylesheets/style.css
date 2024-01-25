@@ -50,6 +50,20 @@ main#landing-page {
   /* flex-direction: column; */
 }
 
+main {
+  background: rgba(0, 0, 0, 0.7);
+  min-width: 300px;
+  border-radius: 20px;
+  margin: 10px 30px;
+  padding: 10px 8px 20px 8px;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+  /* to keep footer at bottom of page (along with part of 'body' styling) */
+  flex: 1;
+}
+
 body > nav {
   background: rgba(0, 0, 0, 0.6);
   color: #ffffff;
@@ -101,6 +115,30 @@ nav > .nav-link.active:active {
   padding: 0px;
 }
 
+footer {
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;  /* to vertically center: */
+  padding: 5px;
+  min-height: 44px;
+  max-height: 50px;
+}
+footer > .nav-link {
+  text-decoration: none;
+  color: #cccccc;
+}
+footer > .nav-link:hover {
+  color: #b98d47;
+  text-decoration: underline;
+}
+footer > .nav-link:active {
+  color: #000000;
+  text-decoration: underline;
+}
+
 button {
   background: none;
   text-decoration: none;
@@ -121,23 +159,10 @@ button:active {
   border: 2px solid #000000;
 }
 
-main {
-  background: rgba(0, 0, 0, 0.7);
-  min-width: 300px;
-  border-radius: 20px;
-  margin: 10px 30px;
-  padding: 10px 8px 0px 8px;
-  display: flex;
-  align-items: center;
-  /* justify-content: center; */
-  flex-direction: column;
-  /* to keep footer at bottom of page (along with part of 'body' styling) */
-  flex: 1;
-}
-
 h1, h2, h3 {
   font-style: italic;
   font-weight: lighter;
+  margin: 5px; 
 }
 
 form {
@@ -178,31 +203,16 @@ table#album-details {
   /* color: #287f08; */
 }
 
-
-
-footer {
-  background: rgba(0, 0, 0, 0.6);
-  color: #ffffff;
+container#album-details-btns-container {
   display: flex;
-  /* flex-direction: column; */
-  justify-content: center;
-  align-items: center;  /* to vertically center: */
-  padding: 5px;
-  min-height: 44px;
-  max-height: 50px;
+  justify-content: space-between;
 }
-footer > .nav-link {
-  text-decoration: none;
-  color: #cccccc;
+#album-details-btns-container button {
+  height: 44px; /* Adjust the height as needed */
 }
-footer > .nav-link:hover {
-  color: #b98d47;
-  text-decoration: underline;
-}
-footer > .nav-link:active {
-  color: #000000;
-  text-decoration: underline;
-}
+
+
+
 
 
 
@@ -210,8 +220,4 @@ footer > .nav-link:active {
 /* for google oauth divs */
 .right {
   margin-left: auto;
-}
-
-form {
-  /* for all forms */
 }

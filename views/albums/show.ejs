@@ -29,32 +29,18 @@
   </table>
 
 
-<section>
-  <div>Title: </div>
-  <div><%= album.title %></div>
-  <div>Artist: </div>
-  <div><%= album.artist %></div>
-  <div>Release year: </div>
-  <div><%= album.releaseYear %></div>
-  <div>Record label: </div>
-  <div><%= album.recordLabel %></div>
-  <div>Added by: </div>
-  <div><%= album.owner.name %></div>
-</section>
+<container id="album-details-btns-container">
 
-
-
-
-<form 
-  id="form-temp-name" 
-  action="/albums/<%= album._id %>/addToMyShelf"
-  method="POST"
->
-  <button type="submit"><h3>add to my shelf</h3></button>
-</form>
-
-
-
+<% if (album.owner.equals(user?.profile._id)) { %>
+  <form 
+    id="form-temp-name" 
+    action="/albums/<%= album._id %>/addToMyShelf"
+    method="POST"
+  >
+    <button type="submit">add to my shelf</button>
+  </form>
+<% } %>
+&nbsp;&nbsp;
 
 <!-- display for logged-in user only -->
 <% if (user) { %>
@@ -64,10 +50,11 @@
     method="GET"
   >
       <!-- hard to see but there's a pencil emoji in there: -->
-      <button type="submit"><h3>✏️</h3></button>
+      <button type="submit">✏️</button>
   </form>
 <% } %>
-  
+&nbsp;&nbsp;
+
 <!-- display for album owner only -->
 <% if (album.owner.equals(user?.profile._id)) { %>
 <form 
@@ -75,11 +62,13 @@
   action="/albums/<%= album._id %>?_method=DELETE" 
   method="POST"
 >
-  <button type="submit"><h3>🗑️</h3></button>
+  <button type="submit">🗑️</button>
 </form>
 <% } %>
 
-<h2>Reviews</h2>
+</container>
+
+
 <% if (user) { %>
   <h3>Add a review</h3>
   <form
@@ -88,7 +77,7 @@
   method="POST"
   >
     <label for="review-input">Review:</label>
-    <textarea name="content" id="review-input" placeholder="Your review goes here"></textarea><br>
+    <textarea name="content" id="review-input" placeholder="Your review goes here. Keep it clean."></textarea><br>
 
     <label for="rating-input">Rating:</label>
     <select name="rating" id="rating-input">
@@ -103,7 +92,11 @@
   </form>
 <% } %>
 
-<ul>
+
+<h2>Reviews</h2>
+
+
+<ul style="margin: 0px;">
   <% album.reviews?.forEach(review => { %>
     <li>
       [Rating: <%= review.rating %>/5] - <%= review.content %> - by <%= review.author.name %>
