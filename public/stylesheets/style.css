@@ -126,7 +126,7 @@ main {
   min-width: 300px;
   border-radius: 20px;
   margin: 10px 30px;
-  padding: 10px 5px 15px 5px;
+  padding: 10px 8px 0px 8px;
   display: flex;
   align-items: center;
   /* justify-content: center; */
@@ -140,7 +140,18 @@ h1, h2, h3 {
   font-weight: lighter;
 }
 
-
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+input {
+  min-width: 200px; /* Set the width as needed */
+  margin: 10px 0; /* Adjust top and bottom margins as needed */
+  padding: 8px;
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+}
 
 
 

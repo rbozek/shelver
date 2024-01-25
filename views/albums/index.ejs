@@ -9,7 +9,7 @@
       <tr>
         <th>Title</th>
         <th>Artist</th>
-        <th>Release Year</th>
+        <th>Year</th>
         <th>Record Label</th>
         <th>Details</th>
       </tr>
@@ -17,7 +17,7 @@
     <tbody>
       <% albums.forEach((album) => { %>
       <tr>
-        <td><%= album.title %></td>
+        <td><i><%= album.title %></i></td>
         <td><%= album.artist %></td>
         <td><%= album.releaseYear %></td>
         <td><%= album.recordLabel %></td>
@@ -26,11 +26,6 @@
       <% }) %>
     </tbody>
   </table>
-
-
-  <div>testing some test</div>
-  <!-- <a href="/albums/error">testing error page - this path should work</a> -->
-
 </main>
 
 <%- include('../partials/footer') %>
