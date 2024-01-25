@@ -101,15 +101,14 @@
 
 
 
-
-
 <% if (Array.isArray(album.reviews) && album.reviews.length > 0) { %>
   <h2>Reviews</h2>
   
   <ul style="margin: 0px;">
     <% album.reviews?.forEach(review => { %>
       <li>
-        [&nbsp;<%= review.rating %>&nbsp;/&nbsp;5&nbsp;] - <%= review.content %> - left by <%= review.author.name %>
+        <%= review.content %>&nbsp;&nbsp;
+        [&nbsp;<%= review.rating %>&nbsp;/&nbsp;5&nbsp;] &bull; left by <%= review.author.name %>
       </li> 
       <% }) %>
     </ul>
