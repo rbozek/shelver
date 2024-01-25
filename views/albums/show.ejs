@@ -80,18 +80,18 @@
     <textarea
       name="content"
       id="review-input"
-      placeholder="Your review goes here. Keep it clean."
+      placeholder="Type here. Keep it clean you animals."
       rows="4" cols="36"
     ></textarea>
 
     <div style="display: flex; flex-direction: row; margin-top: 10px;">
       <label for="rating-input">Rating:&nbsp;&nbsp;</label>
       <select name="rating" id="rating-input">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
         <option value="5">5</option>
+        <option value="4">4</option>
+        <option value="3">3</option>
+        <option value="2">2</option>
+        <option value="1">1</option>
       </select>
     </div>
     <button type="submit" style="margin-top: 10px">Add Review</button>
@@ -99,16 +99,23 @@
   <br>
 <% } %>
 
-<h2>Reviews</h2>
 
-<ul style="margin: 0px;">
-  <% album.reviews?.forEach(review => { %>
-    <li>
-      [&nbsp;<%= review.rating %>&nbsp;/&nbsp;5&nbsp;] - <%= review.content %> - by <%= review.author.name %>
-    </li> 
-  <% }) %>
-</ul>
 
-</main>
 
+
+<% if (Array.isArray(album.reviews) && album.reviews.length > 0) { %>
+  <h2>Reviews</h2>
+  
+  <ul style="margin: 0px;">
+    <% album.reviews?.forEach(review => { %>
+      <li>
+        [&nbsp;<%= review.rating %>&nbsp;/&nbsp;5&nbsp;] - <%= review.content %> - left by <%= review.author.name %>
+      </li> 
+      <% }) %>
+    </ul>
+  <% } else { %>
+  <% } %>
+    
+  </main>
+  
 <%- include('../partials/footer') %>
