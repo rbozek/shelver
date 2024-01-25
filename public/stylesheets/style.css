@@ -211,7 +211,15 @@ container#album-details-btns-container {
   height: 44px; /* Adjust the height as needed */
 }
 
-
+textarea#review-input {
+  background: #b98d47;
+  padding: 8px;
+  border: 1px solid #ccc; 
+  border-radius: 5px;
+  color: #000000;
+  font-weight: bold;
+  overflow: auto;
+}
 
 
 

@@ -37,7 +37,7 @@
     action="/albums/<%= album._id %>/addToMyShelf"
     method="POST"
   >
-    <button type="submit">add to my shelf</button>
+    <button type="submit">Add to My Shelf</button>
   </form>
 <% } %>
 &nbsp;&nbsp;
@@ -70,36 +70,41 @@
 
 
 <% if (user) { %>
-  <h3>Add a review</h3>
+  <br>
   <form
   id="form-temp-name" 
   action="/albums/<%= album._id %>/reviews"
   method="POST"
   >
-    <label for="review-input">Review:</label>
-    <textarea name="content" id="review-input" placeholder="Your review goes here. Keep it clean."></textarea><br>
+    <label for="review-input">Add a review:</label>
+    <textarea
+      name="content"
+      id="review-input"
+      placeholder="Your review goes here. Keep it clean."
+      rows="4" cols="36"
+    ></textarea>
 
-    <label for="rating-input">Rating:</label>
-    <select name="rating" id="rating-input">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-    </select><br>
-
-    <button type="submit">Add Review</button>
+    <div style="display: flex; flex-direction: row; margin-top: 10px;">
+      <label for="rating-input">Rating:&nbsp;&nbsp;</label>
+      <select name="rating" id="rating-input">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+    <button type="submit" style="margin-top: 10px">Add Review</button>
   </form>
+  <br>
 <% } %>
 
-
 <h2>Reviews</h2>
-
 
 <ul style="margin: 0px;">
   <% album.reviews?.forEach(review => { %>
     <li>
-      [Rating: <%= review.rating %>/5] - <%= review.content %> - by <%= review.author.name %>
+      [&nbsp;<%= review.rating %>&nbsp;/&nbsp;5&nbsp;] - <%= review.content %> - by <%= review.author.name %>
     </li> 
   <% }) %>
 </ul>
