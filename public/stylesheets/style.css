@@ -160,6 +160,24 @@ input::placeholder{
   font-weight: bold;
 }
 
+table#album-details {
+  margin: 10px 0 10px 0;
+}
+#album-details td {
+  padding: 4px;
+}
+#album-details td:first-child {
+  /* Style for the left column */
+  text-align: right;
+  /* color: #9b0000; */
+}
+#album-details td:last-child {
+  /* Style for the right column */
+  font-weight: bold;
+  font-size: 1.2em;
+  /* color: #287f08; */
+}
+
 
 
 footer {

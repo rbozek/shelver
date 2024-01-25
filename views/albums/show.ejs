@@ -4,6 +4,31 @@
 <main>
   <h2>"<%= album.title %>" Details</h2>
 
+  <table id="album-details">
+    <tr>
+      <td>Title:</td>
+      <td><i><%= album.title %></i></td>
+    </tr>
+    <tr>
+      <td>Artist:</td>
+      <td><%= album.artist %></td>
+    </tr>
+    <tr>
+      <td>Release year:</td>
+      <td><%= album.releaseYear %></td>
+    </tr>
+    <tr>
+      <td>Record label:</td>
+      <td><%= album.recordLabel %></td>
+    </tr>
+    <tr>
+      <td>Added by:</td>
+      <td><%= album.owner.name %></td>
+    </tr>
+    </tbody>
+  </table>
+
+
 <section>
   <div>Title: </div>
   <div><%= album.title %></div>
