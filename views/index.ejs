@@ -29,12 +29,15 @@
   <br>
 
   <% if (user) { %>
-    <h3>hello, <%= user ? user.profile.name : "friend" %></h3>
+    <p style="text-align: center; font-weight: bold;">
+      welcome, <%= user ? user.profile.name : "friend" %>.
+    </p>
     <% if (user?.profile.avatar) { %>
       <div>
         <img
           src="<%= user.profile.avatar %>"
           alt="<%= user.profile.name %> avatar"
+          border="2px solid #ffffff"
         />
       </div>
     <% } %>
