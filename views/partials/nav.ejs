@@ -11,29 +11,30 @@
       id="logo-nav-link">
       <img
       id="shelver-logo"
-      src="../../assets/shelver-logo-60.png"
+      src="../../assets/shelver-logo-wh-60.png"
+      width="50px"
+      padding="0px"
       alt="Logo"
       >
     </a>
-    &nbsp;
     
     <!-- display links to logged-in users only -->
     <% if (user) { %>
-    <a
-    href="/albums/new"
-    class="nav-link <%= title === 'Add Album' ? 'active' : '' %>"
-    >
-      Add Album
-    </a>
-    
-    <a
-    href="/albums/myShelf/<%= user.profile._id %>"
-    class="nav-link <%= title === 'My Shelf' ? 'active' : '' %>"
-    >
-    My Shelf
-    </a>
-  <% } %>
-  <!-- end of 'display to logged-in users only' -->
+      <a
+      href="/albums/new"
+      class="nav-link <%= title === 'Add Album' ? 'active' : '' %>"
+      >
+        Add Album
+      </a>
+      
+      <a
+      href="/albums/myShelf/<%= user.profile._id %>"
+      class="nav-link <%= title === 'My Shelf' ? 'active' : '' %>"
+      >
+        My Shelf
+      </a>
+    <% } %>
+    <!-- end of 'display to logged-in users only' -->
   
     <a
     href="/albums"
@@ -41,27 +42,30 @@
     >
       Public Shelf
     </a>
-
-    <% if (user) { %>
-      <a href="/auth/logout">
-        <button type="submit">Logout</button>
-      </a>
-    <% } else { %>
-      <div 
-        id="g_id_onload"
-        data-client_id="<%= googleClientID %>"
-        data-login_uri="/auth/google"
-        data-auto_prompt="false"
-        data-prompt_parent_id="g_id_onload"
-      ></div>
-      <div 
-        class="g_id_signin right"
-        data-type="standard"
-        data-size="large"
-        data-theme="outline"
-        data-text="sign_in_with"
-        data-shape="rectangular"
-        data-logo_alignment="left"
-      ></div>
-    <% } %>
+    
+    <div id="google-button-div">
+      <% if (user) { %>
+        <a href="/auth/logout">
+          <button type="submit">Logout</button>
+        </a>
+      <% } else { %>
+        <div 
+          id="g_id_onload"
+          data-client_id="<%= googleClientID %>"
+          data-login_uri="/auth/google"
+          data-auto_prompt="false"
+          data-prompt_parent_id="g_id_onload"
+        ></div>
+        <div 
+          class="g_id_signin"
+          data-type="standard"
+          data-size="large"
+          data-theme="outline"
+          data-text="sign_in_with"
+          data-shape="rectangular"
+          data-logo_alignment="left"
+        ></div>
+      <% } %>
+    </div>
+    <!-- end of google buttons div -->
   </nav>

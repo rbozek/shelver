@@ -12,7 +12,11 @@ html {
 }
 
 body {
-  background-color: #1a1a1a;
+  background-image: url('../assets/background-vinylshelf-dark-1600-lq.png');
+  background-position: top left;
+  background-repeat: repeat-y;
+  background-size: cover;
+  /* opacity: 0.25; */
   color: #f6f6f6;
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
@@ -26,18 +30,17 @@ body {
 }
 
 body > nav {
-  background-color: #f6f6f6;
-  color: #1a1a1a;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
   display: flex;
-  /* justify-content: flex-end; */
   align-items: center;  /* to vertically center: */
-  padding: 10px;
-  min-height: 60px;
+  padding: 5px 10px 5px 10px;
+  min-height: 50px;
 }
 nav > .nav-link {
   text-decoration: none;
-  color: #424748;
-  margin: 10px;
+  color: #ffffff;
+  margin: 0px;
 }
 nav > .nav-link:hover {
   background: rgb(3, 14, 217);
@@ -48,39 +51,42 @@ nav > .nav-link.active {
 #logo-nav-link {
   text-decoration: none;
   margin: 0px;
+  padding: 0px;
 }
 #logo-nav-link:hover {
   text-decoration: inherit;
 }
-
+#google-button-div {
+  margin-left: auto;
+  padding: 0px;
+}
 
 
 main {
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  min-width: 300px;
+  border-radius: 20px;
+  margin: 10px 30px;
   display: flex;
   align-items: center;
   /* justify-content: center; */
   flex-direction: column;
   /* to keep footer at bottom of page (along with part of 'body' styling) */
   flex: 1;
-  /* background image stuff */
-  /* background-color: #000000; */
-  
-  background-image: url('../assets/background-vinylshelf-lq-1600-dark.png');
-  background-position: top left;
-  background-repeat: repeat-y;
-  background-size: cover;
-  /* opacity: 0.25; */
 }
 
 
 footer {
-  background-color: #f6f6f6;
-  color: #1a1a1a;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  min-height: 60px;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;  /* to vertically center: */
+  padding: 5px 10px 5px 10px;
+  min-height: 30px;
+
 }
 
 /* for google oauth divs */
