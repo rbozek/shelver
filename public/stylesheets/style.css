@@ -17,7 +17,7 @@ body {
   background-position: top left;
   background-repeat: repeat-y;
   background-size: cover;
-  color: #f6f6f6;
+  color: #cccccc;
   /* Use a system font, if none are available use any found sans-serif font */
   font-family: 'Montserrat', 'Roboto', sans-serif;
   margin: 0;
@@ -54,24 +54,41 @@ body > nav {
   color: #ffffff;
   display: flex;
   align-items: center;  /* to vertically center: */
-  padding: 5px 10px 5px 10px;
+  padding: 10px 10px 5px 10px;
   min-height: 50px;
 }
 nav > .nav-link {
   text-decoration: none;
-  color: #ffffff;
-  margin: 0px;
+  color: #cccccc;
+  margin: 0px 5px;
+  padding: 5px;
+  border: 2px solid #cccccc;
+  border-radius: 5px;
 }
 nav > .nav-link:hover {
-  background: rgb(3, 14, 217);
+  background: #b98d47;
+}
+nav > .nav-link:active {
+  background: #000000;
+  color: #b98d47;
 }
 nav > .nav-link.active {
-  color: rgb(217, 3, 3);
+  background: #cccccc;
+  color: #000000;
+}
+nav > .nav-link.active:hover {
+  background: #b98d47;
+  color: #cccccc;
+}
+nav > .nav-link.active:active {
+  background: #000000;
+  color: #b98d47;
 }
 #logo-nav-link {
   text-decoration: none;
-  margin: 0px;
+  margin: 0px 5px 0px 0px;
   padding: 0px;
+  line-height: 1; /* Set line-height to 1 to remove extra spacing */
 }
 #logo-nav-link:hover {
   text-decoration: inherit;
@@ -84,10 +101,10 @@ nav > .nav-link.active {
 
 main {
   background: rgba(0, 0, 0, 0.7);
-  color: #ffffff;
   min-width: 300px;
   border-radius: 20px;
   margin: 10px 30px;
+  padding: 10px 5px 15px 5px;
   display: flex;
   align-items: center;
   /* justify-content: center; */
@@ -95,7 +112,6 @@ main {
   /* to keep footer at bottom of page (along with part of 'body' styling) */
   flex: 1;
 }
-
 
 footer {
   background: rgba(0, 0, 0, 0.6);
@@ -106,8 +122,9 @@ footer {
   align-items: center;  /* to vertically center: */
   padding: 5px 10px 5px 10px;
   min-height: 30px;
-
 }
+
+
 
 /* for google oauth divs */
 .right {
