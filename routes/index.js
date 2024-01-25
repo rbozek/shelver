@@ -6,6 +6,14 @@ router.get('/', function (req, res) {
   res.render('index', { title: 'Shelver' })
 })
 
+router.get('/about', function (req, res) {
+  res.render('about', { title: 'About' })
+})
+
+router.get('/contact', function (req, res) {
+  res.render('index', { title: 'Contact' })
+})
+
 export {
   router
 }

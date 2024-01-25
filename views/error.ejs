@@ -1,8 +1,19 @@
 <%- include('./partials/html-head') %>
 <%- include('./partials/nav') %>
 
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+
+<main>
+  <h1>rut roh!</h1>
+  <h2><%= message %></h2>
+  <h3><%= error.status %></h3>
+  <pre><%= error.stack %></pre>
+  <div>something went wrong. but it's probably not your fault.<br>
+  <a href="/albums"> Public Shelf</a>
+  </div>
+
+</main>
+
 
 <%- include('./partials/footer') %>
+
+
