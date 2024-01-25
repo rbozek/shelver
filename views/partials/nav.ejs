@@ -27,11 +27,11 @@
     </a>
     
     <a
-    href="/albums/my-shelf"
+    href="/albums/myShelf/<%= user.profile._id %>"
     class="nav-link <%= title === 'My Shelf' ? 'active' : '' %>"
     >
     My Shelf
-  </a>
+    </a>
   <% } %>
   <!-- end of 'display to logged-in users only' -->
   

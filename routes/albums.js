@@ -15,16 +15,20 @@ router.get('/new', isLoggedIn, albumsCtrl.new)
 // CREATE NEW ALBUM - POST http://localhost:3000/albums/
 router.post('/', isLoggedIn, albumsCtrl.create)
 
-// SHOW 'MY SHELF' VIEW - GET http://localhost:3000/albums/my-shelf
-router.get('/my-shelf', albumsCtrl.myShelf)
+
+
+// WORKING ON THIS ONE
+// SHOW 'MY SHELF' VIEW - GET http://localhost:3000/albums/my-shelf/:profileId
+router.get('/myShelf/:profileId', isLoggedIn, albumsCtrl.myShelf)
+// router.get('/myShelf/:potato', isLoggedIn, albumsCtrl.myShelf)
+
+
 
 // SHOW 'ALBUM DETAIL' VIEW - GET http://localhost:3000/albums/show
 router.get('/:albumId', albumsCtrl.show)
 
-
 // ADD ALBUM TO MY SHELF/ PROFILE MODEL - POST 3000/albums/:albumId/
 router.post('/:albumId/addToMyShelf', isLoggedIn, albumsCtrl.addToMyShelf)
-
 
 // SHOW 'ALBUM EDIT' VIEW - GET http://localhost:3000/albums/:albumid/edit
 router.get('/:albumId/edit', isLoggedIn, albumsCtrl.edit)

@@ -21,11 +21,29 @@ function newAlbum(req, res) {
   })
 }
 
+
 function myShelf(req, res) {
-  res.render('albums/my-shelf', {
-    title: 'My Shelf'
+  console.log('am I seeing Profile ID? test 1 ');
+  console.log(req.params.profileId);
+  console.log(req.params);
+  // console.log(req.params.profileId);
+  // Profile.findById(req.user.profileId)
+  Profile.findById(req.params.profileId)
+  .populate("myShelf")
+  .then(profile => {
+    res.render('albums/my-shelf', {
+      albums: profile.myShelf,
+      title: 'My Shelf'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
   })
 }
+
+
+
 
 function show(req, res){
   // console.log('show function test');

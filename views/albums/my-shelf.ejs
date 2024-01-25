@@ -1,8 +1,33 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
+
+
 <main>
   <h1><%= title %></h1>
+
+  <table id="">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Artist</th>
+        <th>Release Year</th>
+        <th>Record Label</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% albums.forEach((album) => { %>
+      <tr>
+        <td><%= album.title %></td>
+        <td><%= album.artist %></td>
+        <td><%= album.releaseYear %></td>
+        <td><%= album.recordLabel %></td>
+        <td><a href="/albums/<%= album._id %>">🔎</a></td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
 
 </main>
 
