@@ -20,6 +20,7 @@ body {
   color: #cccccc;
   /* Use a system font, if none are available use any found sans-serif font */
   font-family: 'Montserrat', 'Roboto', sans-serif;
+  font-size: 16px;
   margin: 0;
   /* to keep footer at bottom of page (along with part of 'main' styling) */
   min-height: 100vh;
@@ -67,6 +68,7 @@ nav > .nav-link {
 }
 nav > .nav-link:hover {
   background: #b98d47;
+  color: #000000;
 }
 nav > .nav-link:active {
   background: #000000;
@@ -78,11 +80,12 @@ nav > .nav-link.active {
 }
 nav > .nav-link.active:hover {
   background: #b98d47;
-  color: #ffffff;
+  color: #000000;
 }
 nav > .nav-link.active:active {
   background: #000000;
   color: #b98d47;
+  border: 2px solid #000000;
 }
 #logo-nav-link {
   text-decoration: none;
@@ -98,6 +101,25 @@ nav > .nav-link.active:active {
   padding: 0px;
 }
 
+button {
+  background: none;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 5px;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background: #b98d47;
+  color: #000000;
+}
+button:active {
+  background: #000000;
+  color: #b98d47;
+  border: 2px solid #000000;
+}
 
 main {
   background: rgba(0, 0, 0, 0.7);
@@ -112,6 +134,8 @@ main {
   /* to keep footer at bottom of page (along with part of 'body' styling) */
   flex: 1;
 }
+
+
 
 footer {
   background: rgba(0, 0, 0, 0.6);
