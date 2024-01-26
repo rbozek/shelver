@@ -198,6 +198,44 @@ function addToMyShelf(req, res){
 }
 
 
+function removeFromMyShelf(req,res){
+  Profile.findById(req.user.profile._id)
+  .populate("myShelf")
+  .then(profile => {
+    if (req.user) {
+      profile.myShelf.pull(req.params.albumId)
+      profile.save()
+      .then(() => {
+        console.log('LOOK FOR ERROR HERE');
+        // res.redirect('/albums/my-shelf', {
+        res.render('albums/my-shelf', {
+          albums: profile.myShelf,
+          title: 'My Shelf'
+        })
+      })
+      
+    } else {
+      throw new Error ('🚫 Not authorized 🚫')
+    } 
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
+}
+
+
+
+// Profile.findById(req.params.profileId)
+// .populate("myShelf")
+// .then(profile => {
+//   res.render('albums/my-shelf', {
+//     albums: profile.myShelf,
+//     title: 'My Shelf'
+//   })
+// })
+
+
 export {
   index,
   newAlbum as new,
@@ -208,5 +246,6 @@ export {
   update,
   deleteAlbum as delete,
   addComment,
-  addToMyShelf
+  addToMyShelf,
+  removeFromMyShelf
 }

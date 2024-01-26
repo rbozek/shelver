@@ -30,8 +30,8 @@ router.get('/:albumId', albumsCtrl.show)
 // ADD ALBUM TO MY SHELF/ PROFILE MODEL - POST 3000/albums/:albumId/
 router.post('/:albumId/addToMyShelf', isLoggedIn, albumsCtrl.addToMyShelf)
 
-// REMOVE ALBUM FROM MY SHELF/ PROFILE MODEL - POST 3000/albums/:albumId/
-
+// REMOVE ALBUM FROM MY SHELF/ PROFILE MODEL - DEL 3000/albums/:albumId/
+router.delete('/:albumId/removeFromMyShelf', isLoggedIn, albumsCtrl.removeFromMyShelf)
 
 // SHOW 'ALBUM EDIT' VIEW - GET http://localhost:3000/albums/:albumid/edit
 router.get('/:albumId/edit', isLoggedIn, albumsCtrl.edit)

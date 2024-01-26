@@ -14,7 +14,7 @@
         <th>Year</th>
         <th>Record Label</th>
         <th>&nbsp;</th>
-        <!-- <th>&nbsp;</th> -->
+        <th>&nbsp;</th>
       </tr>
     </thead>
     <tbody>
@@ -25,6 +25,19 @@
         <td><%= album.releaseYear %></td>
         <td><%= album.recordLabel %></td>
         <td><a href="/albums/<%= album._id %>">🔎</a></td>
+        <td>
+          <form 
+          id="form-temp-name" 
+          action="/albums/<%= album._id %>/removeFromMyShelf?_method=DELETE" 
+          method="POST"
+          >
+          <button type="submit">❌</button>
+          </form>
+        </td>
+        
+       
+
+
       </tr>
       <% }) %>
     </tbody>
