@@ -175,18 +175,21 @@ function addComment(req, res){
 }
 
 function addToMyShelf(req, res){
-  // console.log(req.user.profile._id);
-  // console.log(req.params.albumId);
-
   Profile.findById(req.user.profile._id)
   .then(profile => {
     if (req.user) {
-      profile.myShelf.push(req.params.albumId)
-      profile.save()
-      .then(() => {
-        res.redirect(`/albums/${req.params.albumId}`)
-      })
-      
+      //check if albumId is already in MyShelf to avoid duplicates
+      if (!profile.myShelf.includes(req.params.albumId)) {  
+        profile.myShelf.push(req.params.albumId)
+        profile.save()
+        .then(() => {
+          res.redirect(`/albums/${req.params.albumId}`)
+        })
+      } else {
+        // Handle case where albumId is already in myShelf
+        console.log("is already in the shelf");
+        res.redirect(`/albums/${req.params.albumId}`);
+      }
     } else {
       throw new Error ('🚫 Not authorized 🚫')
     } 
