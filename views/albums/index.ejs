@@ -4,7 +4,8 @@
 <main>
   <h1><%= title %></h1>
   <p>[🔎 to view album details.]</p>
-  <table id="">
+
+  <table id="shelf-table-normal">
     <thead>
       <tr>
         <th>Title</th>
@@ -26,6 +27,23 @@
       <% }) %>
     </tbody>
   </table>
+  
+  <container id="shelf-container-small">
+    <% albums.forEach((album) => { %>
+      <div>
+        <i><%= album.title %></i> - 
+        <%= album.artist %>&nbsp;
+        <a href="/albums/<%= album._id %>">🔎</a>
+      </div>
+      <div>
+        <%= album.releaseYear %> - 
+        <%= album.recordLabel %>
+      </div>
+    <br>
+    <% }) %>
+  </container>
+
+
 </main>
 
 <%- include('../partials/footer') %>

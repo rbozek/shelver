@@ -191,6 +191,24 @@ tr > td {
 }
 
 
+/* this chunk is for basic mobile responsiveness */
+container#shelf-container-small{
+  display:none;
+}
+@media screen and (max-width: 600px) {
+  table#shelf-table-normal{
+    display:none;
+  }
+  container#shelf-container-small{
+    display:inline;
+  }
+}
+
+
+
+
+
+
 button.my-shelf-buttons {
   background: none;
   text-decoration: none;
@@ -198,6 +216,8 @@ button.my-shelf-buttons {
   padding: 0px;
   cursor: pointer;
 }
+
+
 
 
 table#album-details {
