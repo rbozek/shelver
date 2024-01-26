@@ -46,9 +46,8 @@ function myShelf(req, res) {
 
 
 function show(req, res){
-  // console.log('show function test');
   Album.findById(req.params.albumId)
-  // from Taco Cat "to show comments about tacos"
+  // to populate data of album properties
   .populate([
     {path: "owner"},
     // 'deep population' to access author name in embedded reviewSchema
