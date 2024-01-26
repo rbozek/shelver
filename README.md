@@ -14,7 +14,9 @@ In an age dominated by music streaming services -- Shelver is here to help you! 
 
 More philosophy & artsy-fartsy thoughts on Shelver's "about" page, if you're interested.
 
-# [OPEN SHELVER](https://shelver.fly.dev){:target="_blank"}
+# [OPEN SHELVER][openshelver]
+[openshelver]: https://shelver.fly.dev
+{:target="_blank"}
 
 ## :desktop_computer:	Technologies used 
 
