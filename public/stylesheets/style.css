@@ -164,6 +164,9 @@ h1, h2, h3 {
   font-weight: lighter;
   margin: 5px; 
 }
+h1 {
+  padding-bottom: 10px;
+}
 
 form {
   display: flex;

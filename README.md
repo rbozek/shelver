@@ -14,9 +14,7 @@ In an age dominated by music streaming services -- Shelver is here to help you! 
 
 More philosophy & artsy-fartsy thoughts on Shelver's "about" page, if you're interested.
 
-# [OPEN SHELVER][openshelver]
-[openshelver]: https://shelver.fly.dev
-{:target="_blank"}
+# [OPEN SHELVER](https://shelver.fly.dev)
 
 ## :desktop_computer:	Technologies used 
 
@@ -41,7 +39,7 @@ More philosophy & artsy-fartsy thoughts on Shelver's "about" page, if you're int
 - [Trello](https://trello.com/b/YD3zrCfq/shelver)
 
 ## :memo:	Notes
-- User might notice that an album's details will be editable by any logged in user, not only the user who created it. This is intentional - if music lovers use this site, my hope is that any album edits made will be in the spirit of accuracy, and for the benefit of all other users. Consider it an experiment in trust. :slightly_smiling_face:	
+- User might notice that an album's details will be editable by any logged in user, not only the user who created it. This is intentional - if music lovers use this site, my hope is that any edits made will be in the spirit of accuracy, and for the benefit of all other users. Consider it an experiment in trust. :slightly_smiling_face:	
 
 ## :wrench:	Basic Improvements (a.k.a. not quite Ice Box)
 
