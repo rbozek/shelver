@@ -3,15 +3,15 @@
 
 <main>
   <h1><%= title %></h1>
-
+  <p>[🔎 to view album details.]</p>
   <table id="">
     <thead>
       <tr>
         <th>Title</th>
         <th>Artist</th>
+        <th></th>
         <th>Year</th>
         <th>Record Label</th>
-        <th>Details</th>
       </tr>
     </thead>
     <tbody>
@@ -19,9 +19,9 @@
       <tr>
         <td><i><%= album.title %></i></td>
         <td><%= album.artist %></td>
+        <td><a href="/albums/<%= album._id %>">🔎</a></td>
         <td><%= album.releaseYear %></td>
         <td><%= album.recordLabel %></td>
-        <td><a href="/albums/<%= album._id %>">🔎</a></td>
       </tr>
       <% }) %>
     </tbody>

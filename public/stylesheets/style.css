@@ -192,6 +192,16 @@ tr > td {
   padding: 1px 4px 1px 4px;
 }
 
+
+button.my-shelf-buttons {
+  background: none;
+  text-decoration: none;
+  border: 0px;
+  padding: 0px;
+  cursor: pointer;
+}
+
+
 table#album-details {
   margin: 10px 0 10px 0;
 }
