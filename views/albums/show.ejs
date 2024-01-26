@@ -31,50 +31,50 @@
 
 <container id="album-details-btns-container">
 
-<!-- display for logged-in user only -->
-<% if (user) { %>
+  <!-- display for logged-in user only -->
+  <% if (user) { %>
+    <form 
+      id="form-temp-name" 
+      action="/albums/<%= album._id %>/addToMyShelf"
+      method="POST"
+    >
+      <button type="submit">＋ to My Shelf</button>
+    </form>
+    &nbsp;&nbsp;
+
+    <form 
+    id="form-temp-name" 
+    action="/albums/<%= album._id %>/removeFromMyShelf?_method=DELETE" 
+    method="POST"
+    >
+      <button type="submit">❌ from My Shelf</button>
+    </form>
+    &nbsp;&nbsp;
+
+    <form
+      id="form-temp-name" 
+      action="/albums/<%= album._id %>/edit"
+      method="GET"
+    >
+        <!-- hard to see but there's a pencil emoji in there: -->
+        <button type="submit">✏️</button>
+    </form>
+
+  <% } %>
+  &nbsp;&nbsp;
+
+  <!-- display for album owner only -->
+  <% if (album.owner.equals(user?.profile._id)) { %>
   <form 
     id="form-temp-name" 
-    action="/albums/<%= album._id %>/addToMyShelf"
+    action="/albums/<%= album._id %>?_method=DELETE" 
     method="POST"
   >
-    <button type="submit">＋ to My Shelf</button>
+    <button type="submit">🗑️</button>
   </form>
-&nbsp;&nbsp;
-
-  <form 
-  id="form-temp-name" 
-  action="/albums/<%= album._id %>/removeFromMyShelf?_method=DELETE" 
-  method="POST"
-  >
-    <button type="submit">❌ from My Shelf</button>
-  </form>
-&nbsp;&nbsp;
-
-  <form
-    id="form-temp-name" 
-    action="/albums/<%= album._id %>/edit"
-    method="GET"
-  >
-      <!-- hard to see but there's a pencil emoji in there: -->
-      <button type="submit">✏️</button>
-  </form>
-<% } %>
-&nbsp;&nbsp;
-
-<!-- display for album owner only -->
-<% if (album.owner.equals(user?.profile._id)) { %>
-<form 
-  id="form-temp-name" 
-  action="/albums/<%= album._id %>?_method=DELETE" 
-  method="POST"
->
-  <button type="submit">🗑️</button>
-</form>
-<% } %>
+  <% } %>
 
 </container>
-
 
 <% if (user) { %>
   <br>
@@ -106,8 +106,7 @@
   <br>
 <% } %>
 
-
-
+<!-- display reviews only if there is at least one review -->
 <% if (Array.isArray(album.reviews) && album.reviews.length > 0) { %>
   <h2>Reviews</h2>
   

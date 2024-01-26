@@ -21,13 +21,7 @@ function newAlbum(req, res) {
   })
 }
 
-
 function myShelf(req, res) {
-  console.log('am I seeing Profile ID? test 1 ');
-  console.log(req.params.profileId);
-  console.log(req.params);
-  // console.log(req.params.profileId);
-  // Profile.findById(req.user.profileId)
   Profile.findById(req.params.profileId)
   .populate("myShelf")
   .then(profile => {
@@ -41,9 +35,6 @@ function myShelf(req, res) {
     res.redirect('/')
   })
 }
-
-
-
 
 function show(req, res){
   Album.findById(req.params.albumId)
@@ -81,13 +72,9 @@ function edit(req, res) {
 }
 
 function create(req, res) {
-  // console.log('create function first test');
   req.body.owner = req.user.profile._id
-  // console.log('1st test ' + req.body._id);
   Album.create(req.body)
   .then(album => {
-    // console.log('2nd test ' + album._id);
-    // album.save()
     res.redirect(`/albums/${album._id}`)
   })
   .catch(err => {
@@ -97,12 +84,10 @@ function create(req, res) {
 }
 
 function update(req, res) {
-  console.log("testing update album!")
-  // below lines not necessary - for removing empty properties - temp keep for reference.
+  // below lines (for removing empty properties) not necessary as function is now - soon making Album model more complicated - keep for possible future use
   // for (let key in req.body) {
   //   if(req.body[key] === "") delete req.body[key]
   // }
-
   Album.findById(req.params.albumId)
   .then(album => {
     if (req.user) {
@@ -118,20 +103,10 @@ function update(req, res) {
     console.log(err)
     res.redirect("/")
   })
-
-  // previous code, not fully secure!
-  // Album.findByIdAndUpdate(req.params.albumId, req.body, {new: true})
-  // .then(album => {
-  //   res.redirect(`/albums/${album._id}`)
-  // })
-  // .catch(err => {
-  //   console.log(err)
-  //   res.redirect("/")
-  // })
 }
 
-// now fully protected. find album by id, then IF the owner id matches profile id, will go ahead.
 function deleteAlbum(req, res) {
+  // function auth-protected - find album by id, then IF the owner id matches profile id, will go ahead.
   Album.findById(req.params.albumId)
   .then(album => {
     if (album.owner.equals(req.user.profile._id)) {
@@ -158,7 +133,6 @@ function addComment(req, res){
     req.body.rating = req.body.rating
     // push form data into reviews array
     album.reviews.push(req.body)
-    // save
     album.save()
     .then(()=> {
       res.redirect(`/albums/${album._id}`)
@@ -200,7 +174,6 @@ function addToMyShelf(req, res){
   })
 }
 
-
 function removeFromMyShelf(req,res){
   Profile.findById(req.user.profile._id)
   .populate("myShelf")
@@ -209,14 +182,11 @@ function removeFromMyShelf(req,res){
       profile.myShelf.pull(req.params.albumId)
       profile.save()
       .then(() => {
-        console.log('LOOK FOR ERROR HERE');
-        // res.redirect('/albums/my-shelf', {
         res.render('albums/my-shelf', {
           albums: profile.myShelf,
           title: 'My Shelf'
         })
       })
-      
     } else {
       throw new Error ('🚫 Not authorized 🚫')
     } 
@@ -226,17 +196,6 @@ function removeFromMyShelf(req,res){
     res.redirect("/")
   })
 }
-
-
-
-// Profile.findById(req.params.profileId)
-// .populate("myShelf")
-// .then(profile => {
-//   res.render('albums/my-shelf', {
-//     albums: profile.myShelf,
-//     title: 'My Shelf'
-//   })
-// })
 
 
 export {

@@ -43,7 +43,6 @@ More philosophy & artsy-fartsy thoughts on Shelver's "about" page, if you're int
 
 ## :wrench:	Basic Improvements (a.k.a. not quite Ice Box)
 
-- make the display mobile-friendly!
 - add display to show which user last edited an album
 - add sorting options for any shelf page - alpha, date, etc.
 - incorporate tracklists/songlists to albums

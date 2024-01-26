@@ -1,7 +1,6 @@
 html {
   box-sizing: border-box;
 }
-
 /* The Universal Selector */
 *, /* All elements*/
 *::before, /* All ::before pseudo-elements */
@@ -10,7 +9,6 @@ html {
   /* height & width will now include border & padding by default but can be overridden as needed */
   box-sizing: inherit;
 }
-
 
 body {
   background-image: url('../assets/background-vinylshelf-dark-1600-lq.png');
@@ -165,7 +163,6 @@ h1, h2, h3 {
   margin: 5px; 
 }
 
-
 form {
   display: flex;
   flex-direction: column;
@@ -190,7 +187,6 @@ tr > td {
   padding: 1px 4px 1px 4px;
 }
 
-
 /* this chunk is for basic mobile responsiveness */
 container#shelf-display-small{
   display:none;
@@ -204,11 +200,6 @@ container#shelf-display-small{
   }
 }
 
-
-
-
-
-
 button.my-shelf-buttons {
   background: none;
   text-decoration: none;
@@ -216,9 +207,6 @@ button.my-shelf-buttons {
   padding: 0px;
   cursor: pointer;
 }
-
-
-
 
 table#album-details {
   margin: 10px 0 10px 0;
@@ -238,7 +226,6 @@ table#album-details {
   /* color: #287f08; */
 }
 
-
 container#album-details-btns-container {
   display: flex;
   justify-content: space-between;
@@ -256,5 +243,3 @@ textarea#review-input {
   font-weight: bold;
   overflow: auto;
 }
-
-

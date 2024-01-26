@@ -15,14 +15,8 @@ router.get('/new', isLoggedIn, albumsCtrl.new)
 // CREATE NEW ALBUM - POST http://localhost:3000/albums/
 router.post('/', isLoggedIn, albumsCtrl.create)
 
-
-
-// WORKING ON THIS ONE
 // SHOW 'MY SHELF' VIEW - GET http://localhost:3000/albums/my-shelf/:profileId
 router.get('/myShelf/:profileId', isLoggedIn, albumsCtrl.myShelf)
-// router.get('/myShelf/:potato', isLoggedIn, albumsCtrl.myShelf)
-
-
 
 // SHOW 'ALBUM DETAIL' VIEW - GET http://localhost:3000/albums/show
 router.get('/:albumId', albumsCtrl.show)
@@ -45,14 +39,10 @@ router.put('/:albumId', isLoggedIn, albumsCtrl.update)
 // DELETE ALBUM FROM 'ALBUM EDIT' VIEW - DEL http://localhost:3000/albums/:albumId
 router.delete('/:albumId', isLoggedIn, albumsCtrl.delete)
 
-
-
-
-// display error page? - GET http://localhost:3000/albums/error
+// better/clearer error display page - incorporate next - GET http://localhost:3000/albums/error 
 // router.get('/error', function(req, res) {
 //   res.render('albums/error', { title: 'Error page' })
 // })
-
 
 export {
   router

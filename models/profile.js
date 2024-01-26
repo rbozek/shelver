@@ -15,4 +15,3 @@ const Profile = mongoose.model('Profile', profileSchema)
 export {
   Profile
 }
-
