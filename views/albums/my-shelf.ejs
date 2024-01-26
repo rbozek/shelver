@@ -43,10 +43,15 @@
 
   <container id="shelf-display-small">
     <% albums.forEach((album) => { %>
-      <div style="display: flex;">
+      <div>
         <i><%= album.title %></i> - 
         <%= album.artist %>
-        &nbsp;&nbsp;
+      </div>
+      <div>
+        <%= album.releaseYear %> - 
+        <%= album.recordLabel %>
+      </div>
+      <div style="display: flex;">
         <form action="/albums/<%= album._id %>" method="GET">
           <button class="my-shelf-buttons" type="submit">🔎</button>
         </form>
@@ -58,10 +63,6 @@
         >
           <button class="my-shelf-buttons" type="submit">❌</button>
         </form>
-      </div>
-      <div>
-        <%= album.releaseYear %> - 
-        <%= album.recordLabel %>
       </div>
     <br>
     <% }) %>

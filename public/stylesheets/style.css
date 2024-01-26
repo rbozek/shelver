@@ -187,18 +187,7 @@ tr > td {
   padding: 1px 4px 1px 4px;
 }
 
-/* this chunk is for basic mobile responsiveness */
-container#shelf-display-small{
-  display:none;
-}
-@media screen and (max-width: 600px) {
-  table#shelf-display-normal{
-    display:none;
-  }
-  container#shelf-display-small{
-    display:inline;
-  }
-}
+
 
 button.my-shelf-buttons {
   background: none;
@@ -226,7 +215,7 @@ table#album-details {
   /* color: #287f08; */
 }
 
-container#album-details-btns-container {
+div#album-details-btns-container {
   display: flex;
   justify-content: space-between;
 }
@@ -242,4 +231,33 @@ textarea#review-input {
   color: #000000;
   font-weight: bold;
   overflow: auto;
+}
+
+/* this chunk is for basic mobile responsiveness */
+#shelf-display-small, #detail-display-small{
+  display:none;
+}
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 0.8em;
+  }
+  main {
+    min-width: 200px;
+    border-radius: 20px;
+    margin: 10px 4px;
+    padding: 10px 4px 20px 4px;
+  }
+  table#shelf-display-normal{
+    display:none;
+  }
+  #shelf-display-small{
+    display:inline;
+  }
+  #detail-display-small{
+    display:inline;
+  }
+  div#album-details-btns-container {
+    display: flex;
+    flex-direction: column;
+  }
 }

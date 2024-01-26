@@ -29,8 +29,7 @@
   </table>
 
 
-<container id="album-details-btns-container">
-
+<div id="album-details-btns-container">
   <!-- display for logged-in user only -->
   <% if (user) { %>
     <form 
@@ -51,7 +50,15 @@
     </form>
     &nbsp;&nbsp;
 
-    <form
+    <!-- insert line break when screen shrinks for mobile -->
+    <!-- returning to reconfigure - idea is sound but need to work around larger album-details-btns-container -->
+    <!-- <span id="detail-display-small">
+      </div>
+      <br>
+      <div id="album-details-btns-container">
+    </span> -->
+
+      <form
       id="form-temp-name" 
       action="/albums/<%= album._id %>/edit"
       method="GET"
@@ -74,7 +81,11 @@
   </form>
   <% } %>
 
-</container>
+</div>
+
+
+
+
 
 <% if (user) { %>
   <br>
@@ -87,7 +98,7 @@
     <textarea
       name="content"
       id="review-input"
-      placeholder="Type here. Keep it clean you animals."
+      placeholder="Type your review here."
       rows="4" cols="36"
     ></textarea>
 

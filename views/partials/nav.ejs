@@ -18,30 +18,30 @@
       >
     </a>
     
-    <!-- display links to logged-in users only -->
-    <% if (user) { %>
-      <a
-      href="/albums/new"
-      class="nav-link <%= title === 'Add Album' ? 'active' : '' %>"
-      >
-        Add Album
-      </a>
-      
-      <a
-      href="/albums/myShelf/<%= user.profile._id %>"
-      class="nav-link <%= title === 'My Shelf' ? 'active' : '' %>"
-      >
-        My Shelf
-      </a>
-    <% } %>
-    <!-- end of 'display to logged-in users only' -->
-  
     <a
     href="/albums"
     class="nav-link <%= title === 'Public Shelf' ? 'active' : '' %>"
     >
       Public Shelf
     </a>
+
+    <!-- display links to logged-in users only -->
+    <% if (user) { %>
+      <a
+      href="/albums/myShelf/<%= user.profile._id %>"
+      class="nav-link <%= title === 'My Shelf' ? 'active' : '' %>"
+      >
+        My Shelf
+      </a>
+
+      <a
+      href="/albums/new"
+      class="nav-link <%= title === 'Add Album' ? 'active' : '' %>"
+      >
+        Add Album
+      </a>
+    <% } %>
+    <!-- end of 'display to logged-in users only' -->
     
     <div id="google-button-div">
       <% if (user) { %>
