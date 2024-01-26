@@ -192,14 +192,14 @@ tr > td {
 
 
 /* this chunk is for basic mobile responsiveness */
-container#shelf-container-small{
+container#shelf-display-small{
   display:none;
 }
 @media screen and (max-width: 600px) {
-  table#shelf-table-normal{
+  table#shelf-display-normal{
     display:none;
   }
-  container#shelf-container-small{
+  container#shelf-display-small{
     display:inline;
   }
 }

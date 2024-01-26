@@ -6,7 +6,7 @@
 <main>
   <h1><%= title %></h1>
   <p>[🔎 to view album details. ❌ to remove from My Shelf.]</p>
-  <table id="">
+  <table id="shelf-display-normal">
     <thead>
       <tr>
         <th>Title</th>
@@ -38,14 +38,36 @@
             <button class="my-shelf-buttons" type="submit">❌</button>
           </form>
         </td>
-        
-       
-
-
       </tr>
       <% }) %>
     </tbody>
   </table>
+
+  <container id="shelf-display-small">
+    <% albums.forEach((album) => { %>
+      <div style="display: flex;">
+        <i><%= album.title %></i> - 
+        <%= album.artist %>
+        &nbsp;&nbsp;
+        <form action="/albums/<%= album._id %>" method="GET">
+          <button class="my-shelf-buttons" type="submit">🔎</button>
+        </form>
+        &nbsp;
+        <form 
+        id="form-temp-name" 
+        action="/albums/<%= album._id %>/removeFromMyShelf?_method=DELETE" 
+        method="POST"
+        >
+          <button class="my-shelf-buttons" type="submit">❌</button>
+        </form>
+      </div>
+      <div>
+        <%= album.releaseYear %> - 
+        <%= album.recordLabel %>
+      </div>
+    <br>
+    <% }) %>
+  </container>
 
 </main>
 
