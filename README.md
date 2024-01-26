@@ -5,12 +5,16 @@
 ![Shelver screenshot-public library-resize](https://github.com/rbozek/shelver/assets/152832616/9112fbc9-722c-4fc6-a7a4-4d7b19975a72)
 
 Are you a music lover?
+
 Do you listen to albums all the way through, from front to back?
+
 Have you ever had a real-life, hold-this-thing-in-your-hands music collection? (Vinyl? CD's? Tapes? Wax cylinders?)
+
 In an age dominated by music streaming services -- Shelver is here to help you! Add any album you like to the public shelf to make it accessible to any future user. Then save any album into your personal collection - your Shelf - where you'll curate your own library that you can always refer back to. No longer will those obscure albums be lost to time.
+
 More philosophy & artsy-fartsy thoughts on Shelver's "about" page, if you're interested.
 
-# [OPEN SHELVER](https://shelver.fly.dev)
+# [OPEN SHELVER](https://shelver.fly.dev){:target="_blank"}
 
 ## :desktop_computer:	Technologies used 
 
@@ -33,6 +37,9 @@ More philosophy & artsy-fartsy thoughts on Shelver's "about" page, if you're int
 
 ## :brain:	Planning Materials
 - [Trello](https://trello.com/b/YD3zrCfq/shelver)
+
+## :memo:	Notes
+- User might notice that an album's details will be editable by any logged in user, not only the user who created it. This is intentional - if music lovers use this site, my hope is that any album edits made will be in the spirit of accuracy, and for the benefit of all other users. Consider it an experiment in trust. :slightly_smiling_face:	
 
 ## :wrench:	Basic Improvements (a.k.a. not quite Ice Box)
 
