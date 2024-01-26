@@ -31,7 +31,8 @@
 
 <container id="album-details-btns-container">
 
-<% if (album.owner.equals(user?.profile._id)) { %>
+<!-- display for logged-in user only -->
+<% if (user) { %>
   <form 
     id="form-temp-name" 
     action="/albums/<%= album._id %>/addToMyShelf"
@@ -39,12 +40,8 @@
   >
     <button type="submit">Add to My Shelf</button>
   </form>
-<% } %>
 &nbsp;&nbsp;
 
-
-<!-- display for logged-in user only -->
-<% if (user) { %>
   <form
     id="form-temp-name" 
     action="/albums/<%= album._id %>/edit"
